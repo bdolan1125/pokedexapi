@@ -6,6 +6,11 @@ console.log(process.env.API_TOKEN);
 
 const app = express();
 app.use(morgan('dev'));
+app.use(function validateBearerToken(req, res, next) {
+  console.log('validate bearer token middleware');
+  next();
+});
+
 
 const validTypes = [`Bug`, `Dark`, `Dragon`, `Electric`, `Fairy`, `Fighting`, `Fire`, `Flying`, `Ghost`, `Grass`, `Ground`, `Ice`, `Normal`, `Poison`, `Psychic`, `Rock`, `Steel`, `Water`];
 
