@@ -5,7 +5,7 @@ const app = express();
 app.use(morgan('dev'));
 
 app.use((req, res) => {
-  res.send('Hello, world?');
+  res.send('Hello, world!');
 });
 
 const PORT = 8000;
